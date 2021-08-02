@@ -4,7 +4,6 @@ const booksRouter = require('./routes/books.router');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const bookList = [];
 const movieList = [];
 
 // express static file serving - public is the folder name
@@ -15,7 +14,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 //Tell express to use booksRouter
-app.use('/', booksRouter)
+app.use('/book', booksRouter)
 
 // Start server listening on PORT
 app.listen(PORT, () => {
